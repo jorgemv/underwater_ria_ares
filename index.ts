@@ -19,8 +19,8 @@ function initMap(): void {
   );
 
   const bounds = new google.maps.LatLngBounds(
-    new google.maps.LatLng(43.325, -8.4818),
-    new google.maps.LatLng(43.51, -8.125)
+    new google.maps.LatLng(43.3253, -8.483),
+    new google.maps.LatLng(43.51, -8.1213)
   );
 
   // The photograph is courtesy of the U.S. Geological Survey.
@@ -59,7 +59,7 @@ function initMap(): void {
       img.style.width = '100%';
       img.style.height = '100%';
       img.style.position = 'absolute';
-      img.style.opacity = '100%';
+      img.style.opacity = '60%';
       this.div.appendChild(img);
 
       // Add the element to the "overlayLayer" pane.
