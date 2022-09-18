@@ -1,3 +1,6 @@
+import { MarkersRender } from './src/domain/marker/marker';
+import { markers } from './src/domain/marker/markers';
+
 /**
  * @license
  * Copyright 2019 Google LLC. All Rights Reserved.
@@ -26,22 +29,8 @@ function initMap(): void {
   // The photograph is courtesy of the U.S. Geological Survey.
   let image = 'https://i.ibb.co/xCr9qMm/mapa.png';
 
-  const myLatLng = { lat: 43.379768, lng: -8.391969 };
-
-  const icon = {
-    url: 'https://www.freeiconspng.com/uploads/scuba-flag-scuba-icon-19.png', // url
-    scaledSize: new google.maps.Size(50, 50), // scaled size
-  };
-
-  let isGrelleVisible = true;
-
-  new google.maps.Marker({
-    position: myLatLng,
-    map,
-    title: 'El Grelle',
-    icon: icon,
-    visible: isGrelleVisible,
-  });
+  const markersRender = new MarkersRender();
+  markersRender.renderList(map, markers);
 
   /* Change markers on zoom */
   google.maps.event.addListener(map, 'zoom_changed', () => {
