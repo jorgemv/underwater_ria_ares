@@ -12,7 +12,7 @@ function initMap(): void {
   const map = new google.maps.Map(
     document.getElementById('map') as HTMLElement,
     {
-      zoom: 11,
+      zoom: 12,
       center: { lat: 43.399532, lng: -8.258441 },
       mapTypeId: 'satellite',
     }
@@ -25,6 +25,29 @@ function initMap(): void {
 
   // The photograph is courtesy of the U.S. Geological Survey.
   let image = 'https://i.ibb.co/xCr9qMm/mapa.png';
+
+  const myLatLng = { lat: 43.379768, lng: -8.391969 };
+
+  const icon = {
+    url: 'https://www.freeiconspng.com/uploads/scuba-flag-scuba-icon-19.png', // url
+    scaledSize: new google.maps.Size(50, 50), // scaled size
+  };
+
+  let isGrelleVisible = true;
+
+  new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: 'El Grelle',
+    icon: icon,
+    visible: isGrelleVisible,
+  });
+
+  /* Change markers on zoom */
+  google.maps.event.addListener(map, 'zoom_changed', () => {
+    const zoom = map.getZoom();
+    console.log(zoom);
+  });
 
   /**
    * The custom USGSOverlay object contains the USGS image,
