@@ -1,4 +1,4 @@
-import { MarkersRender } from './src/domain/marker/marker';
+import { MarkersRender } from './src/domain/marker/marker-render';
 import { markers } from './src/domain/marker/markers';
 
 /**
@@ -26,8 +26,7 @@ function initMap(): void {
     new google.maps.LatLng(43.5095, -8.1213)
   );
 
-  // The photograph is courtesy of the U.S. Geological Survey.
-  let image = 'https://i.ibb.co/2hmLpc6/mapa3.png';
+  let image = './src/assets/img/nautical-chart.png';
 
   const markersRender = new MarkersRender();
   markersRender.renderList(map, markers);
@@ -71,7 +70,7 @@ function initMap(): void {
       img.style.width = '100%';
       img.style.height = '100%';
       img.style.position = 'absolute';
-      img.style.opacity = '100%';
+      img.style.opacity = '60%';
       this.div.appendChild(img);
 
       // Add the element to the "overlayLayer" pane.
