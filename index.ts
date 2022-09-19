@@ -22,12 +22,12 @@ function initMap(): void {
   );
 
   const bounds = new google.maps.LatLngBounds(
-    new google.maps.LatLng(43.3253, -8.483),
-    new google.maps.LatLng(43.51, -8.1213)
+    new google.maps.LatLng(43.3253, -8.4825),
+    new google.maps.LatLng(43.5095, -8.1213)
   );
 
   // The photograph is courtesy of the U.S. Geological Survey.
-  let image = 'https://i.ibb.co/xCr9qMm/mapa.png';
+  let image = 'https://i.ibb.co/2hmLpc6/mapa3.png';
 
   const markersRender = new MarkersRender();
   markersRender.renderList(map, markers);
@@ -71,7 +71,7 @@ function initMap(): void {
       img.style.width = '100%';
       img.style.height = '100%';
       img.style.position = 'absolute';
-      img.style.opacity = '60%';
+      img.style.opacity = '100%';
       this.div.appendChild(img);
 
       // Add the element to the "overlayLayer" pane.
